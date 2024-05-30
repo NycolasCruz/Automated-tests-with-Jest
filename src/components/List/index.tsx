@@ -1,6 +1,6 @@
 type Props = {
 	list: string[];
-	setList: (list: string[]) => void;
+	setList?: (list: string[]) => void;
 	removeButton?: boolean;
 };
 
@@ -9,8 +9,7 @@ export function List({ list, setList, removeButton }: Props) {
 		const updatedList = [...list];
 
 		updatedList.splice(index, 1);
-
-		setList(updatedList);
+		setList && setList(updatedList);
 	}
 
 	return (

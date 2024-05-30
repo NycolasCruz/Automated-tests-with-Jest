@@ -18,7 +18,7 @@ export function App() {
 		>
 			<NewItem list={list} setList={setList} />
 			<div style={{ display: "flex", marginTop: "1rem" }}>
-				<List list={list} setList={setList} />
+				<List list={list} />
 				<List list={list} setList={setList} removeButton />
 			</div>
 		</div>
