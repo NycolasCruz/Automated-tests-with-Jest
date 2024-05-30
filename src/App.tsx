@@ -1,7 +1,12 @@
 import { useState } from "react";
 
-import { NewItem } from "@/components/NewItem";
-import { List } from "@/components/List";
+/**
+ * CORRIGIR O ALIAS
+ *
+ */
+
+import { NewItem } from "./components/NewItem";
+import { List } from "./components/List";
 
 export function App() {
 	const [list, setList] = useState<string[]>([]);
