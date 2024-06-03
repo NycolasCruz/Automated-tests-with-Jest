@@ -3,7 +3,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { List } from ".";
 
 describe("verify the list", () => {
-	beforeEach(() => {
+	beforeAll(() => {
 		render(<List list={["item 1", "item 2", "item 3"]} />);
 	});
 
