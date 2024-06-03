@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import { App } from "./App";
 
-describe("removing items", () => {
+describe("manipulating items", () => {
 	beforeEach(() => {
 		render(<App />);
 	});
@@ -12,8 +12,8 @@ describe("removing items", () => {
 		cleanup();
 	});
 
-	it("removing an item when remove button is clicked", async () => {
-		// first, by adding the item
+	it("adding and then removing the item", async () => {
+		// first we add the item
 		const input = screen.getByLabelText("Adicione um novo item à lista");
 		const addButton = screen.getByRole("button", { name: "Adicionar" });
 
