@@ -6,6 +6,16 @@
 import type { Config } from "jest";
 
 const config: Config = {
+	// aliases
+	preset: "ts-jest",
+	moduleNameMapper: {
+		"^@/(.*)$": "<rootDir>/src/$1",
+		"^pages/(.*)$": "<rootDir>/src/pages/$1",
+		"^components/(.*)$": "<rootDir>/src/components/$1",
+		"^types/(.*)$": "<rootDir>/src/@types/$1",
+		"^public/(.*)$": "<rootDir>/public/$1",
+	},
+
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
 
