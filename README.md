@@ -15,7 +15,7 @@
 ## 🔧 Principais comandos utilizados
 
 ```
-yarn add -D jest ts-node @types/jest @swc/core @swc/jest @testing-library/jest-dom @testing-library/react @testing-library/user-event
+yarn add -D jest ts-node ts-jest @types/jest @swc/core @swc/jest @testing-library/jest-dom @testing-library/react @testing-library/user-event
 ```
 
 ```
