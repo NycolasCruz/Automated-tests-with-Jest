@@ -6,16 +6,6 @@
 import type { Config } from "jest";
 
 const config: Config = {
-	// aliases
-	preset: "ts-jest",
-	moduleNameMapper: {
-		"^@/(.*)$": "<rootDir>/src/$1",
-		"^pages/(.*)$": "<rootDir>/src/pages/$1",
-		"^components/(.*)$": "<rootDir>/src/components/$1",
-		"^types/(.*)$": "<rootDir>/src/@types/$1",
-		"^public/(.*)$": "<rootDir>/public/$1",
-	},
-
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
 
@@ -99,8 +89,15 @@ const config: Config = {
 	//   "node"
 	// ],
 
+	// aliases
 	// A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-	// moduleNameMapper: {},
+	moduleNameMapper: {
+		"^@/(.*)$": "<rootDir>/src/$1",
+		"^pages/(.*)$": "<rootDir>/src/pages/$1",
+		"^components/(.*)$": "<rootDir>/src/components/$1",
+		"^types/(.*)$": "<rootDir>/src/@types/$1",
+		"^public/(.*)$": "<rootDir>/public/$1",
+	},
 
 	// An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
 	// modulePathIgnorePatterns: [],
@@ -112,7 +109,7 @@ const config: Config = {
 	// notifyMode: "failure-change",
 
 	// A preset that is used as a base for Jest's configuration
-	// preset: undefined,
+	preset: "ts-jest",
 
 	// Run tests from one or more projects
 	// projects: undefined,
@@ -147,7 +144,7 @@ const config: Config = {
 	// setupFiles: [],
 
 	// A list of paths to modules that run some code to configure or set up the testing framework before each test
-	setupFilesAfterEnv: ["<rootDir>/src/tests/setup.ts"],
+	setupFilesAfterEnv: ["<rootDir>/src/test/setup.ts"],
 
 	// The number of seconds after which a test is considered as slow and reported as such in the results.
 	// slowTestThreshold: 5,
