@@ -10,7 +10,7 @@
 
 ## 🖥️ Sobre
 
-<p align="justify">Projeto voltado para o estudo de testes unitários utilizando Jest e React Testing Library.</p>
+<p align="justify">Projeto voltado para o estudo de testes automatizados utilizando Jest e React Testing Library.</p>
 
 ## 🔧 Principais comandos utilizados
 
