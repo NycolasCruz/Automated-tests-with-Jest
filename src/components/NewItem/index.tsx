@@ -1,8 +1,13 @@
 import { FormEvent, useState } from "react";
+import axios from "axios";
 
 type Props = {
 	list: string[];
 	setList: (list: string[]) => void;
+};
+
+type NewItem = {
+	title: string;
 };
 
 export function NewItem({ list, setList }: Props) {
@@ -15,16 +20,37 @@ export function NewItem({ list, setList }: Props) {
 		setValue("");
 	}
 
+	async function handleAddingRandomItemsToTheList(event: FormEvent) {
+		event.preventDefault();
+
+		const URL = "https://jsonplaceholder.typicode.com/todos?_limit=2";
+
+		try {
+			const { data } = await axios.get<NewItem[]>(URL);
+			const newItems = data.map((item) => item.title);
+
+			setList(list.concat(newItems));
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
 	return (
 		<>
-			<label htmlFor="new-item">Adicione um novo item à lista</label>
+			<form
+				style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}
+			>
+				<label htmlFor="new-item">Adicione um novo item à lista</label>
 
-			<form style={{ display: "flex", gap: "0.5rem", marginTop: "0.5rem" }}>
 				<input id="new-item" value={value} onChange={(event) => setValue(event.target.value)} />
 
-				<button disabled={!value} onClick={(event) => handleAddingTheItemToTheList(event)}>
-					Adicionar
-				</button>
+				<div style={{ display: "flex", gap: "0.5rem" }}>
+					<button disabled={!value} onClick={(event) => handleAddingTheItemToTheList(event)}>
+						Adicionar
+					</button>
+
+					<button onClick={handleAddingRandomItemsToTheList}>Adicionar dados aleatórios</button>
+				</div>
 			</form>
 		</>
 	);
