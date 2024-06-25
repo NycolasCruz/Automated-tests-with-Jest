@@ -1,18 +1,19 @@
 <h1 align="center">Jest with Testing Library</h1>
 
-## 🚀 Tecnologias
-
-<p>Principais tecnologias do projeto:</p>
+## 🚀 Principais Tecnologias
 
 - React
 - Jest
 - React Testing Library
+- Cypress
 
 ## 🖥️ Sobre
 
 <p align="justify">Projeto voltado para o estudo de testes automatizados utilizando Jest e React Testing Library.</p>
 
 ## 🔧 Principais comandos utilizados
+
+**Para criar testes unitários e de integração:**
 
 ```
 yarn add -D jest ts-node ts-jest @types/jest @swc/core @swc/jest @testing-library/jest-dom @testing-library/react @testing-library/user-event
@@ -26,6 +27,8 @@ yarn add -D jest-environment-jsdom
 npx jest --init
 ```
 
+**Para criar testes end-to-end:**
+não finalizado
 
 ## 🕹️ Instalação
 
