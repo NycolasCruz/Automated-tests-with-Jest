@@ -9,9 +9,12 @@
 		"format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md,css,scss}\"",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"test": "jest"
+		"test": "jest",
+		"test:watch": "jest --watchAll",
+		"test:coverage": "jest --coverage"
 	},
 	"dependencies": {
+		"axios": "^1.7.2",
 		"esbuild": "0.19.2",
 		"path": "^0.12.7",
 		"react": "^18.2.0",
