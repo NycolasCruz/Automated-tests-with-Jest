@@ -1,6 +1,6 @@
 <h1 align="center">Jest with Testing Library</h1>
 
-## 🚀 Principais Tecnologias
+## 🚀 Principais tecnologias
 
 - React
 - Jest
