@@ -1,4 +1,4 @@
-<h1 align="center">Jest with Testing Library</h1>
+<h1 align="center">Testes automatizados com React</h1>
 
 ## 🚀 Principais tecnologias
 
