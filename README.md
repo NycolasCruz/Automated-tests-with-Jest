@@ -11,6 +11,8 @@
 
 <p align="justify">Projeto voltado para o estudo de testes automatizados utilizando Jest e React Testing Library.</p>
 
+**Projeto não finalizado**
+
 ## 🔧 Principais comandos utilizados
 
 **Para criar testes unitários e de integração:**
