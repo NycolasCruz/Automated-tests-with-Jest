@@ -1,6 +1,6 @@
 <h1 align="center">Testes automatizados com React</h1>
 
-## 🚀 Principais tecnologias
+## 🚀 Principais tecnologias utilizadas
 
 - React
 - Jest
