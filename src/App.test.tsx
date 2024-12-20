@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitForElementToBeRemoved } from "@testing-library/react";
+import { render, screen, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { App } from "./App";
@@ -6,10 +6,6 @@ import { App } from "./App";
 describe("manipulating items", () => {
 	beforeAll(() => {
 		render(<App />);
-	});
-
-	afterEach(() => {
-		cleanup();
 	});
 
 	it("adding and then removing the item", async () => {
