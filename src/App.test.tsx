@@ -4,23 +4,30 @@ import userEvent from "@testing-library/user-event";
 import { App } from "./App";
 
 describe("manipulating items", () => {
+	let input: HTMLElement, addButton: HTMLElement;
+
 	beforeEach(() => {
 		render(<App />);
+
+		input = screen.getByLabelText("Adicione um novo item à lista");
+		addButton = screen.getByRole("button", { name: "Adicionar" });
 	});
 
-	it("adding and then removing the item", async () => {
-		// first we add the item
-		const input = screen.getByLabelText("Adicione um novo item à lista");
-		const addButton = screen.getByRole("button", { name: "Adicionar" });
-
+	it("should add an item to the list", async () => {
 		await userEvent.type(input, "item 1");
-		userEvent.click(addButton);
+		await userEvent.click(addButton);
 
-		// now we remove
+		await screen.findByText("item 1");
+	});
+
+	it("should remove an item from the list", async () => {
+		await userEvent.type(input, "item 1");
+		await userEvent.click(addButton);
+
 		const removeButton = await screen.findByRole("button", { name: "Remover" });
 
-		userEvent.click(removeButton);
+		await userEvent.click(removeButton);
 
-		await waitForElementToBeRemoved(() => screen.getAllByText("item 1"));
+		await waitForElementToBeRemoved(() => screen.queryByText("item 1"));
 	});
 });
