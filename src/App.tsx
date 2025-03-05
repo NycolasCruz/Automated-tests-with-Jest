@@ -17,10 +17,7 @@ export function App() {
 			}}
 		>
 			<NewItem list={list} setList={setList} />
-			<div style={{ display: "flex", marginTop: "1rem" }}>
-				<List list={list} />
-				<List list={list} setList={setList} removeButton />
-			</div>
+			<List list={list} setList={setList} />
 		</div>
 	);
 }

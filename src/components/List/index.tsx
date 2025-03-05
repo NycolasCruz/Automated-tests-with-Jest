@@ -1,10 +1,9 @@
 type Props = {
 	list: string[];
-	setList?: (list: string[]) => void;
-	removeButton?: boolean;
+	setList: (list: string[]) => void;
 };
 
-export function List({ list, setList, removeButton }: Props) {
+export function List({ list, setList }: Props) {
 	function handleTheRemovalOfTheItemFromTheList(index: number) {
 		const updatedList = [...list];
 
@@ -13,23 +12,29 @@ export function List({ list, setList, removeButton }: Props) {
 	}
 
 	return (
-		<ul>
-			{removeButton ? (
-				<>
-					{list.map((item, index) => (
-						<li key={`item-${index}`}>
-							{item}{" "}
-							<button onClick={() => handleTheRemovalOfTheItemFromTheList(index)}>Remover</button>
-						</li>
-					))}
-				</>
-			) : (
-				<>
-					{list.map((item, index) => (
-						<li key={`item-${index}`}>{item}</li>
-					))}
-				</>
-			)}
+		<ul
+			style={{
+				display: "flex",
+				flexDirection: "column",
+				gap: "0.5rem",
+				padding: 0,
+				marginTop: "1.5rem",
+				marginBottom: 0,
+			}}
+		>
+			{list.map((item, index) => (
+				<li
+					key={`item-${index}`}
+					style={{
+						display: "flex",
+						justifyContent: "space-between",
+						gap: "0.5rem",
+					}}
+				>
+					{item}
+					<button onClick={() => handleTheRemovalOfTheItemFromTheList(index)}>Remover</button>
+				</li>
+			))}
 		</ul>
 	);
 }
