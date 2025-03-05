@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { App } from "./App";
 
 describe("manipulating items", () => {
-	beforeAll(() => {
+	beforeEach(() => {
 		render(<App />);
 	});
 
