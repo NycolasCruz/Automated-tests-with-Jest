@@ -26,8 +26,8 @@ describe("manipulating items", () => {
 
 		const removeButton = await screen.findByRole("button", { name: "Remover" });
 
-		await userEvent.click(removeButton);
+		userEvent.click(removeButton);
 
-		await waitForElementToBeRemoved(() => screen.queryByText("item 1"));
+		await waitForElementToBeRemoved(screen.getByText("item 1"));
 	});
 });
