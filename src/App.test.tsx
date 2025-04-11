@@ -28,6 +28,6 @@ describe("manipulating items", () => {
 
 		userEvent.click(removeButton);
 
-		await waitForElementToBeRemoved(screen.getByText("item 1"));
+		await waitForElementToBeRemoved(screen.queryByText("item 1"));
 	});
 });
